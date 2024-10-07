@@ -3,7 +3,7 @@ package exercise;
 // BEGIN
 public class Segment {
     private Point begin;
-    private Point end;1
+    private Point end;
 
     public Segment(Point begin, Point end) {
         this.begin = begin;
@@ -24,4 +24,5 @@ public class Segment {
         return new Point(midX, midY);
     }
 }
+
 // END
