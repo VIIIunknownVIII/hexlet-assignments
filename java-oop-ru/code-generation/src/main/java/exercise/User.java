@@ -2,8 +2,10 @@ package exercise;
 
 import lombok.Value;
 
+// BEGIN
 @Value
-public class User {
+// END
+class User {
     int id;
     String firstName;
     String lastName;

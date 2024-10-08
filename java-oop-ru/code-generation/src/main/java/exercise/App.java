@@ -3,26 +3,19 @@ package exercise;
 import java.nio.file.Path;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
-import java.io.IOException;
 
+// BEGIN
 public class App {
 
-    public static void save(Path path, Car car) {
-        String json = car.serialize();
-        try {
-            Files.write(path, json.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void save(Path filePath, Car instance) throws Exception {
+        String jsonRepresentation = instance.serialize();
+        Files.writeString(filePath, jsonRepresentation, StandardOpenOption.WRITE);
     }
 
-    public static Car extract(Path path) {
-        try {
-            String json = Files.readString(path);
-            return Car.deserialize(json);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
+    public static Car extract(Path filePath) throws Exception {
+        String jsonRepresentation = Files.readString(filePath);
+        Car instance = Car.deserialize(jsonRepresentation);
+        return instance;
     }
 }
+// END
