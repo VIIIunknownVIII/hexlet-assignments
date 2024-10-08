@@ -4,8 +4,7 @@ import lombok.Value;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 // BEGIN
-
-
+@Value
 // END
 class Car {
     int id;
@@ -25,5 +24,6 @@ class Car {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(jsonRepresentation, Car.class);
     }
+
     // END
 }
