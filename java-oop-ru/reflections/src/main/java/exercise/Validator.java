@@ -2,20 +2,21 @@ package exercise;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Validator {
 
-    public static List<String> validate(Object obj) {
+    // Метод для валидации только по аннотации @NotNull
+    public static List<String> validate(Object object) {
         List<String> invalidFields = new ArrayList<>();
-        Class<?> objClass = obj.getClass();
 
-        // Проходим по всем полям класса
-        for (Field field : objClass.getDeclaredFields()) {
+        for (Field field : object.getClass().getDeclaredFields()) {
             if (field.isAnnotationPresent(NotNull.class)) {
-                field.setAccessible(true); // Делаем приватные поля доступными
+                field.setAccessible(true); // Позволяет доступ к приватным полям
                 try {
-                    Object value = field.get(obj);
+                    Object value = field.get(object);
                     if (value == null) {
                         invalidFields.add(field.getName());
                     }
@@ -24,6 +25,31 @@ public class Validator {
                 }
             }
         }
+
         return invalidFields;
     }
-}
+
+    public static Map<String, List<String>> advancedValidate(Object object) {
+        Map<String, List<String>> validationResult = new HashMap<>();
+
+        for (Field field : object.getClass().getDeclaredFields()) {
+            List<String> errors = new ArrayList<>();
+            field.setAccessible(true);
+
+            try {
+                Object value = field.get(object);
+
+                // Проверка @NotNull
+                if (field.isAnnotationPresent(NotNull.class) && value == null) {
+                    errors.add("can not be null");
+                }
+
+                // Проверка @MinLength
+                if (field.isAnnotationPresent(MinLength.class) && value != null) {
+                    MinLength minLength = field.getAnnotation(MinLength.class);
+                    if (value instanceof String && ((String) value).length() < minLength.minLength()) {
+                        errors.add("length less than " + minLength.minLength());
+                    }
+                }
+
+                if (!errors
