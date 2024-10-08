@@ -23,9 +23,9 @@ dependencies {
     implementation("io.javalin:javalin:6.1.3")
 
     // BEGIN
-    implementation("io.javalin:javalin:5.3.2")
-    implementation("gg.jte:jte:3.0.1")
-    implementation("io.javalin:javalin-rendering:5.3.2")
+    implementation("gg.jte:jte:3.1.9")
+    implementation("io.javalin:javalin-rendering:6.1.3")
+
     // END
 
     implementation("io.javalin:javalin-bundle:6.1.3")
