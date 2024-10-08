@@ -1,8 +1,7 @@
 package exercise;
 
-// BEGIN
-
 import java.util.Map;
+import java.util.HashMap;
 
 public class FileKV implements KeyValueStorage {
     private String filePath;
@@ -12,39 +11,28 @@ public class FileKV implements KeyValueStorage {
         Utils.writeFile(filePath, Utils.serialize(initialData));
     }
 
-    private Map<String, String> loadFromFile() {
-        String fileContent = Utils.readFile(filePath);
-        return Utils.deserialize(fileContent);
-    }
-
-    private void saveToFile(Map<String, String> data) {
-        String serializedData = Utils.serialize(data);
-        Utils.writeFile(filePath, serializedData);
-    }
-
     @Override
     public void set(String key, String value) {
-        Map<String, String> data = loadFromFile();
+        Map<String, String> data = Utils.deserialize(Utils.readFile(filePath));
         data.put(key, value);
-        saveToFile(data);
+        Utils.writeFile(filePath, Utils.serialize(data));
     }
 
     @Override
     public void unset(String key) {
-        Map<String, String> data = loadFromFile();
+        Map<String, String> data = Utils.deserialize(Utils.readFile(filePath));
         data.remove(key);
-        saveToFile(data);
+        Utils.writeFile(filePath, Utils.serialize(data));
     }
 
     @Override
     public String get(String key, String defaultValue) {
-        Map<String, String> data = loadFromFile();
+        Map<String, String> data = Utils.deserialize(Utils.readFile(filePath));
         return data.getOrDefault(key, defaultValue);
     }
 
     @Override
     public Map<String, String> toMap() {
-        return loadFromFile();
+        return new HashMap<>(Utils.deserialize(Utils.readFile(filePath)));
     }
 }
-// END
