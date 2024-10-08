@@ -8,48 +8,61 @@ import java.util.Map;
 
 public class Validator {
 
-    // Метод для валидации только по аннотации @NotNull
-    public static List<String> validate(Object object) {
+    public static List<String> validate(Object obj) {
         List<String> invalidFields = new ArrayList<>();
 
-        for (Field field : object.getClass().getDeclaredFields()) {
-            if (field.isAnnotationPresent(NotNull.class)) {
-                field.setAccessible(true); // Позволяет доступ к приватным полям
-                try {
-                    Object value = field.get(object);
+        try {
+            for (Field field : obj.getClass().getDeclaredFields()) {
+                field.setAccessible(true);
+                if (field.isAnnotationPresent(NotNull.class)) {
+                    Object value = field.get(obj);
                     if (value == null) {
                         invalidFields.add(field.getName());
                     }
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
                 }
             }
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
 
         return invalidFields;
     }
 
-    public static Map<String, List<String>> advancedValidate(Object object) {
-        Map<String, List<String>> validationResult = new HashMap<>();
+    public static Map<String, List<String>> advancedValidate(Object obj) {
+        Map<String, List<String>> errors = new HashMap<>();
 
-        for (Field field : object.getClass().getDeclaredFields()) {
-            List<String> errors = new ArrayList<>();
-            field.setAccessible(true);
+        try {
+            for (Field field : obj.getClass().getDeclaredFields()) {
+                field.setAccessible(true);
+                List<String> fieldErrors = new ArrayList<>();
 
-            try {
-                Object value = field.get(object);
 
-                // Проверка @NotNull
-                if (field.isAnnotationPresent(NotNull.class) && value == null) {
-                    errors.add("can not be null");
-                }
-
-                // Проверка @MinLength
-                if (field.isAnnotationPresent(MinLength.class) && value != null) {
-                    MinLength minLength = field.getAnnotation(MinLength.class);
-                    if (value instanceof String && ((String) value).length() < minLength.minLength()) {
-                        errors.add("length less than " + minLength.minLength());
+                if (field.isAnnotationPresent(NotNull.class)) {
+                    Object value = field.get(obj);
+                    if (value == null) {
+                        fieldErrors.add("can not be null");
                     }
                 }
 
-                if (!errors
+                if (field.isAnnotationPresent(MinLength.class)) {
+                    Object value = field.get(obj);
+                    if (value != null && value instanceof String) {
+                        String stringValue = (String) value;
+                        int minLength = field.getAnnotation(MinLength.class).minLength();
+                        if (stringValue.length() < minLength) {
+                            fieldErrors.add("length less than " + minLength);
+                        }
+                    }
+                }
+
+                if (!fieldErrors.isEmpty()) {
+                    errors.put(field.getName(), fieldErrors);
+                }
+            }
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return errors;
+    }
+}
