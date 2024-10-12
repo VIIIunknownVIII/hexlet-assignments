@@ -20,3 +20,4 @@
     footer = @`
         <p>Thanks for visiting, come again soon!</p>
     `
+)
