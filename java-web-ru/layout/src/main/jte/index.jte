@@ -1,14 +1,9 @@
-@template("layout/page.jte")
-@params(exercise.dto.users.UsersPage page)
+@template.layout.page(
+    content = @`
+        <h2>Welcome to Hexlet</h2>
+    `,
+    footer = @`
+        <p>Thanks for visiting, come again soon!</p>
+    `
+)
 
-<h1>Users List</h1>
-
-<ul class="list-group">
-    @for (var user : page.getUsers()) {
-        <li class="list-group-item">
-            <a href="/users/@{user.getId()}">
-                @{user.getFirstName()} @{user.getLastName()}
-            </a>
-        </li>
-    }
-</ul>
