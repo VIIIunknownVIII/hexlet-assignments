@@ -1,28 +1,22 @@
+@import exercise.dto.users.UserPage
+ @param UserPage page
 
-  --hexlet-token=zlfsuJTfzvnvoiq5YySYimvHKZsrT0OdxH-QEsGBzSY6MQh5UBSDWsY4btI-AzUZ5PUUjQ \
-  --github-token=<token from github>
-
-Для отправки решения на проверку, из директории с домашним заданием, выполните команду:
-
-hexlet assignment submit
-
-пройдено 6 уроков из 22
-
-    Домашнее задание
-    Обсуждение
-    Теория
-
-    Сложности и вопросы?
-
-Если вы не знаете, что делать дальше:
-
-Домашние задания основаны на предыдущих уроках, поэтому если пройденного ранее материала недостаточно для решения задачи — это наша вина. Напишите об этом в обсуждениях, мы улучшим описание задачи и расширим теорию, и обязательно вам ответим
-
-Как лучше понять задачу:
-
-    Изучите все файлы домашнего задания. Они дадут представление об архитектуре кода и способах его запуска
-    Запустите тесты. Текст ошибки покажет, что ожидалось и что получилось
-    Используйте отладочную печать. Она поможет увидеть результаты выполнения кода по шагам
-
-Когда вы застряли, не видите вариантов решения или не можете справиться с ошибкой, почитайте обсуждения и, если останутся вопросы, задайте свой. Мы не будем подсказывать решение, но поможем разобраться с условием задания или выводом тестов. При составлении вопроса опирайтесь на наш гайд «Как правильно задавать вопросы»
-
+ <html lang="en">
+   <head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+             rel="stylesheet"
+             integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+             crossorigin="anonymous">
+     <title>Hello Hexlet!</title>
+   </head>
+   <body>
+     <div class="mx-auto p-4 py-md-5">
+       <main>
+         <h2>${page.getUser().getFirstName()} ${page.getUser().getLastName()}</h2>
+         <div>${page.getUser().getEmail()}</div>
+       </main>
+     </div>
+   </body>
+ </html>
