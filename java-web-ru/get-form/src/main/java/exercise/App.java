@@ -21,18 +21,16 @@ public final class App {
         });
 
         app.get("/users", ctx -> {
-            // Получаем параметр term, если он присутствует, или пустую строку, если его нет
+
             String searchTerm = ctx.queryParam("term");
             if (searchTerm == null) {
                 searchTerm = "";
             }
 
-            // Фильтруем пользователей по началу имени (без учета регистра)
             List<User> filteredUsers = USERS.stream()
                     .filter(user -> StringUtils.startsWithIgnoreCase(user.getFirstName(), searchTerm))
                     .collect(Collectors.toList());
 
-            // Передаем список пользователей и текущий поисковый запрос в шаблон
             ctx.render("users/index.jte", model("page", new UsersPage(filteredUsers, searchTerm)));
         });
 
