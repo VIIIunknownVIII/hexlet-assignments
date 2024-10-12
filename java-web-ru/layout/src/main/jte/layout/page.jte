@@ -1,27 +1,42 @@
-@{! layout }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@{title}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>My App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-light p-3">
-        <nav class="container">
-            <a class="navbar-brand" href="/">Home</a>
-            <a class="nav-link" href="/users">Users</a>
-        </nav>
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">My App</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">Users</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </header>
 
-    <main class="container mt-4">
-        @{! content }
+    <!-- Main content area -->
+    <main class="container my-4">
+        @content() <!-- This is where the page-specific content will be inserted -->
     </main>
 
-    <footer class="bg-light text-center p-3 mt-4">
-        <p>© 2024 Your Name - <a href="https://gitlab.com/yourprofile">My GitLab Profile</a></p>
+    <!-- Footer -->
+    <footer class="bg-light py-3">
+        <div class="container">
+            <span class="text-muted">© 2024 My App | <a href="https://gitlab.com/myprofile">GitLab Profile</a></span>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

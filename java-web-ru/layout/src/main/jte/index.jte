@@ -1,5 +1,14 @@
-@{! layout }
-@{title = "Home"}
+@template("layout/page.jte")
+@params(exercise.dto.users.UsersPage page)
 
-<h1>Welcome to the User Management System!</h1>
-<p>This is the home page. Use the navigation above to view users.</p>
+<h1>Users List</h1>
+
+<ul class="list-group">
+    @for (var user : page.getUsers()) {
+        <li class="list-group-item">
+            <a href="/users/@{user.getId()}">
+                @{user.getFirstName()} @{user.getLastName()}
+            </a>
+        </li>
+    }
+</ul>
