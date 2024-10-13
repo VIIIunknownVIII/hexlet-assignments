@@ -1,5 +1,4 @@
 <!-- BEGIN -->
-<!-- BEGIN -->
 @import gg.jte.Content
 @param Content content
 
@@ -14,5 +13,4 @@
     ${content}
 </body>
 </html>
-<!-- END -->
 <!-- END -->

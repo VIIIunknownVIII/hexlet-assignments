@@ -7,5 +7,9 @@ import lombok.Getter;
 import exercise.dto.BasePage;
 
 // BEGIN
-
+@AllArgsConstructor
+@Getter
+public class PostsPage extends BasePage {
+    private List<Post> posts;
+}
 // END
