@@ -2,14 +2,11 @@ package exercise;
 
 import io.javalin.Javalin;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import exercise.model.User;
 import exercise.dto.users.UsersPage;
-
 import static io.javalin.rendering.template.TemplateUtil.model;
-
 import io.javalin.rendering.template.JavalinJte;
+
 import org.apache.commons.lang3.StringUtils;
 
 public final class App {
@@ -24,18 +21,26 @@ public final class App {
             config.fileRenderer(new JavalinJte());
         });
 
+        // BEGIN
         app.get("/users", ctx -> {
-            // Получаем параметр term для фильтрации
-            String term = ctx.queryParam("term");
+            var term = ctx.queryParam("term");
+            List<User> users;
+            if (term == null) {
+                users = USERS;
+            } else {
+                users = USERS
+                        .stream()
+                        .filter(u -> {
+                            return StringUtils.startsWithIgnoreCase(u.getFirstName(), term);
+                        })
+                        .toList();
+            }
 
-            // Фильтруем пользователей по началу имени без учета регистра
-            List<User> filteredUsers = USERS.stream()
-                    .filter(user -> term == null || StringUtils.startsWithIgnoreCase(user.getFirstName(), term))
-                    .collect(Collectors.toList());
+            var page = new UsersPage(users, term);
+            ctx.render("users/index.jte", model("page", page));
 
-            // Передаем данные на шаблон
-            ctx.render("users/index.jte", model("page", new UsersPage(filteredUsers, term)));
         });
+        // END
 
         app.get("/", ctx -> {
             ctx.render("index.jte");
