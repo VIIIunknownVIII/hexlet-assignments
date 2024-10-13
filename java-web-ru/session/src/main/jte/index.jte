@@ -1,17 +1,17 @@
-@import exercise.dto.LoginPage
+@import exercise.dto.MainPage
 @import exercise.util.NamedRoutes
-@param LoginPage page
+@param MainPage page
 
 <!-- sessions/build.jte -->
 <!-- Нужно не забыть добавить маршрут в NamedRoutes -->
 @template.layout.page(
 content = @`
-@if(page.getError() != null)
-    <p>${page.getError()}</p>
-@endif
-<form action="${NamedRoutes.loginPath()}" method="post">
-    <input type="text" placeholder="Name" name="name" required value="${page.getName()}"/>
-    <input type="password" placeholder="Password" name="password" required/>
-    <input type="submit" value="Войти"/>
+@if(page.getName() == null)
+    <a href="${NamedRoutes.buildSessionPath()}">Войти</a>
+@else
+    <p>Добро пожаловать, ${page.getName().toString()}</p>
+<form action="${NamedRoutes.logoutPath()}" method="post">
+    <input type="submit" value="Выйти" />
 </form>
+@endif
 `)
