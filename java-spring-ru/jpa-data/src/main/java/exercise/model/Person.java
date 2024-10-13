@@ -13,15 +13,15 @@ import lombok.Setter;
 
 // BEGIN
 @Entity
-@Table(name = "persons")
+@Table(name = "people")
 @Getter
 @Setter
 public class Person {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Long id;
+    private long id;
 
-    @Column
     private String firstName;
     private String lastName;
 }
