@@ -24,7 +24,8 @@ public final class App {
         app.get(NamedRoutes.postPath("{id}"), PostsController::show);
 
         // BEGIN
-        
+        app.get(NamedRoutes.editPath("{id}"), PostsController::edit);
+        app.post(NamedRoutes.postPath("{id}"), PostsController::update);
         // END
 
         return app;
