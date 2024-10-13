@@ -19,13 +19,39 @@ public class PostsController {
     }
 
     // BEGIN
-    
+    public static void index(Context ctx) {
+        var posts = PostRepository.getEntities();
+        var page = new PostsPage(posts);
+        page.setFlash(ctx.consumeSessionAttribute("flash"));
+        ctx.render("posts/index.jte", model("page", page));
+    }
+
+    public static void create(Context ctx) {
+        var name = ctx.formParam("name");
+        var body = ctx.formParam("body");
+        try {
+            name = ctx.formParamAsClass("name", String.class)
+                    .check(value -> value.length() >= 2, "Course name must be longer than 2 characters")
+                    .get();
+
+            body = ctx.formParamAsClass("body", String.class)
+                    .get();
+
+            var post = new Post(name, body);
+            PostRepository.save(post);
+            ctx.sessionAttribute("flash", "Post was successfully created!");
+            ctx.redirect(NamedRoutes.postsPath());
+        } catch (ValidationException e) {
+            var page = new BuildPostPage(name, body, e.getErrors());
+            ctx.render("posts/build.jte", model("page", page));
+        }
+    }
     // END
 
     public static void show(Context ctx) {
         var id = ctx.pathParamAsClass("id", Long.class).get();
         var post = PostRepository.find(id)
-            .orElseThrow(() -> new NotFoundResponse("Post not found"));
+                .orElseThrow(() -> new NotFoundResponse("Post not found"));
 
         var page = new PostPage(post);
         ctx.render("posts/show.jte", model("page", page));

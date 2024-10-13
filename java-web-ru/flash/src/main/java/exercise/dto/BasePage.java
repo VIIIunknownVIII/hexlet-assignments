@@ -1,7 +1,4 @@
 // BEGIN
-
-// END
-// BEGIN
 package exercise.dto;
 
 import lombok.Getter;
