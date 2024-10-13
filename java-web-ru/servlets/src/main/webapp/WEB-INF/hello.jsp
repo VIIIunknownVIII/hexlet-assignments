@@ -6,6 +6,6 @@
         <title>JSP Example</title>
     </head>
     <body>
-        <div><%= request.getAttribute("message") %></div>
+        <div>Hello, <%= request.getAttribute("name") %>!</div>
     </body>
 </html>
