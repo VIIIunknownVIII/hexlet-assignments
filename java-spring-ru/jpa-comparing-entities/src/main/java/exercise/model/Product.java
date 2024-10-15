@@ -5,19 +5,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Table;
 import static jakarta.persistence.GenerationType.IDENTITY;
+
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+// BEGIN
+@Entity()
 @Table(name = "products")
 @Getter
 @Setter
+@EqualsAndHashCode(of = {"title", "price"})
 public class Product {
-
-    @Id
+    @Id()
     @GeneratedValue(strategy = IDENTITY)
-    private long id;
-
+    private Long id;
     private String title;
-    private int price;
+    private Integer price;
 }
+// END

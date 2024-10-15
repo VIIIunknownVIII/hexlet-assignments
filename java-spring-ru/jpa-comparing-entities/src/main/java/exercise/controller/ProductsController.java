@@ -17,6 +17,7 @@ import java.util.List;
 import exercise.model.Product;
 import exercise.repository.ProductRepository;
 import exercise.exception.ResourceNotFoundException;
+import exercise.exception.ResourceAlreadyExistsException;
 
 @RestController
 @RequestMapping("/products")
@@ -30,27 +31,42 @@ public class ProductsController {
         return productRepository.findAll();
     }
 
-    @PostMapping(path = "")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Product create(@RequestBody Product product) {
-        return productRepository.save(product);
-    }
-
     // BEGIN
-    @GetMapping("{id}")
-    public Product getById(@PathVariable Long id) {
-        var product = productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found."));
+    @PostMapping()
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product createProduct(@RequestBody Product productData) {
+        var products = productRepository.findAll();
+        for (var product : products) {
+            if (product.equals(productData)) {
+                throw new ResourceAlreadyExistsException("Товар уже существует");
+            }
+        }
+
+        var newProduct = productRepository.save(productData);
+        return newProduct;
+    }
+    // END
+
+    @GetMapping(path = "/{id}")
+    public Product show(@PathVariable long id) {
+        var product =  productRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
 
         return product;
     }
 
-    @PutMapping("{id}")
-    public Product updateProduct(@PathVariable Long id, @RequestBody Product product) {
-        var product2 = productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found."));
-        product2 = productRepository.save(product);
-        return product2;
+    @PutMapping(path = "/{id}")
+    public Product update(@PathVariable long id, @RequestBody Product productData) {
+        var product =  productRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
+
+        product.setTitle(productData.getTitle());
+        product.setPrice(productData.getPrice());
+
+        productRepository.save(product);
+
+        return product;
     }
-    // END
 
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable long id) {
