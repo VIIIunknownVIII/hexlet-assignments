@@ -24,7 +24,8 @@ import exercise.repository.TaskRepository;
 import exercise.model.Task;
 
 // BEGIN
-
+@SpringBootTest
+@AutoConfigureMockMvc
 // END
 class ApplicationTest {
 
@@ -61,8 +62,51 @@ class ApplicationTest {
         assertThatJson(body).isArray();
     }
 
+    private Task createTask() {
+        var task = Instancio.of(Task.class)
+                .ignore(Select.field(Task::getId))
+                .supply(Select.field(Task::getTitle), () -> faker.lorem().word())
+                .supply(Select.field(Task::getDescription), () -> faker.lorem().paragraph()).create();
+        return task;
+    }
+
 
     // BEGIN
-    
+    @Test
+    public void getById() throws Exception {
+        var task = createTask();
+        var newTask = taskRepository.save(task);
+
+        var result = mockMvc.perform(get("/tasks/" + newTask.getId())).andExpect(status().isOk()).andReturn();
+        var body = result.getResponse().getContentAsString();
+
+        assertThatJson(body).and(
+                v -> v.node("title").isEqualTo(task.getTitle()),
+                v -> v.node("description").isEqualTo(task.getDescription())
+        );
+
+        taskRepository.deleteById(newTask.getId());
+    }
+
+    @Test
+    public void create() throws Exception {
+        var task = createTask();
+        var request = post("/tasks").contentType(MediaType.APPLICATION_JSON).content(om.writeValueAsString(task));
+        mockMvc.perform(request).andExpect(status().isCreated());
+
+        var createdTask = taskRepository.findByTitle(task.getTitle()).get();
+        assertThat(createdTask.getTitle()).isEqualTo(task.getTitle());
+    }
+
+    @Test
+    public void deleteTask()  throws Exception {
+        var task = createTask();
+        taskRepository.save(task);
+        var request = delete("/tasks/{id}", task.getId());
+        mockMvc.perform(request).andExpect(status().isOk());
+
+        var currentTask = taskRepository.findById(task.getId()).orElse(null);
+        assertThat(currentTask).isNull();
+    }
     // END
 }
