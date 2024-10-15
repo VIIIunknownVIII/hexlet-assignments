@@ -1,12 +1,14 @@
 ---
 
 spring:
+  datasource:
+    url: jdbc:h2:file:./test
+    username: admin
+    password: admin
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: update
-  output:
-    ansi:
-      enabled: always
-  profiles:
-    default: development
+    show-sql: true
+  h2:
+    console:
+      enabled: true
