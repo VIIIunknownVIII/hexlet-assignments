@@ -41,7 +41,7 @@ public class CarsController {
     public CarDTO show(@PathVariable long id) {
 
         var car =  carRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Car with id " + id + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Car with id " + id + " not found"));
         var carDTO = carMapper.map(car);
         return carDTO;
     }
@@ -59,7 +59,7 @@ public class CarsController {
     public CarDTO update(@PathVariable long id, @RequestBody CarUpdateDTO carData) {
 
         var car =  carRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Car with id " + id + " not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Car with id " + id + " not found"));
 
         carMapper.update(carData, car);
         carRepository.save(car);
