@@ -20,7 +20,7 @@ class ApplicationTest {
     public void testIndex() throws Exception {
         var result = mockMvc.perform(MockMvcRequestBuilders.get("/"))
                 .andExpect(status().isOk())
-                .andExpect(forwardedUrl("index.html"));
+                .andExpect(forwardedUrl("public/index.html"));
     }
 
     @Test
