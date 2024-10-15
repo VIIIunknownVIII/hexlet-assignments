@@ -13,17 +13,13 @@ public class UserUtils {
     private UserRepository userRepository;
 
     // BEGIN
-    @Autowired
-    private UserDetailsService userDetailsService;
-
     public User getCurrentUser() {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null && authentication.isAuthenticated()) {
-            String email = authentication.getName();
-            return userRepository.findByEmail(email)
-                    .orElseThrow(() -> new RuntimeException("User not found"));
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return null;
         }
-        throw new RuntimeException("No authenticated user found");
+        var email = authentication.getName();
+        return userRepository.findByEmail(email).get();
     }
     // END
 

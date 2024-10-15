@@ -14,22 +14,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class JWTUtils {
 
-    private final JwtEncoder jwtEncoder;
-
     @Autowired
-    public JWTUtils(JwtEncoder jwtEncoder) {
-        this.jwtEncoder = jwtEncoder;
-    }
+    private JwtEncoder encoder;
 
-    public String generateToken(UserDetails user) {
+    public String generateToken(String username) {
         Instant now = Instant.now();
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuer("self")
                 .issuedAt(now)
                 .expiresAt(now.plus(1, ChronoUnit.HOURS))
-                .subject(user.getUsername())
+                .subject(username)
                 .build();
-        return jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+        return encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
     }
 }
+
 // END
