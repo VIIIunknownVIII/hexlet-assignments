@@ -28,4 +28,3 @@ public class MinThread extends Thread {
         logger.info("Thread " + Thread.currentThread().getName() + " finished");
     }
 }
-// END
