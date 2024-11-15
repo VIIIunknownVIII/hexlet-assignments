@@ -1,5 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e220c677-b4da-412b-a510-00df9e67612a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/examples/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/examples/Dog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/examples/Example.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/examples/Frog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/presentation_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/presentation_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/src/main/java/exercise/PairedTag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/src/main/java/exercise/SingleTag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/src/main/java/exercise/Tag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/inheritance_08.10.24_17.13.39/src/test/java/exercise/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/examples/Bmw.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/examples/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/examples/Example.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/examples/Kia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/presentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/src/main/java/exercise/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/src/main/java/exercise/Cottage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/src/main/java/exercise/Flat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/src/main/java/exercise/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/src/main/java/exercise/ReversedSequence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/interfaces/src/test/java/exercise/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/examples/Device.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/examples/Example.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/examples/GalaxyNote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/examples/IPad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/examples/IPhone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/examples/Smartphoneable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/examples/Tabletable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/presentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/main/java/exercise/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/main/java/exercise/FileKV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/main/java/exercise/InMemoryKV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/main/java/exercise/KeyValueStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/main/java/exercise/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/test/java/exercise/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/test/java/exercise/FileKVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/test/java/exercise/InMemoryKVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-oop-ru/subtyping_08.10.24_00.13.21/src/test/resources/file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/java/exercise/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/java/exercise/controller/ProductsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/java/exercise/controller/WelcomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/java/exercise/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/java/exercise/handler/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/java/exercise/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/java/exercise/repository/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/src/test/java/exercise/ApplicationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling/system.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/README.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/java/exercise/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/java/exercise/controller/ProductsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/java/exercise/controller/WelcomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/java/exercise/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/java/exercise/handler/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/java/exercise/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/java/exercise/repository/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/src/test/java/exercise/ApplicationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-spring-ru/error-handling_13.10.24_19.58.50/system.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java-web-ru/validation/src/main/java/exercise/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java-web-ru/validation/src/main/java/exercise/App.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "VIIIunknownVIII"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/VIIIunknownVIII/hexlet-assignments.git",
+    "accountId": "0e272676-ed43-4b90-87cb-b47cbf5ff0e3"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2otGgZKXFVtBFV2D53rHmspVdmc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/gg/Hexlet/hexlet-assignments/java-advanced-ru/sync-primitives"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -12,5 +169,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e220c677-b4da-412b-a510-00df9e67612a" name="Changes" comment="" />
+      <created>1731681569323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731681569323</updated>
+    </task>
+    <servers />
   </component>
 </project>
